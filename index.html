@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>pve dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <div id="header">
+    <div>
+      <span class="hostname" id="h-hostname">PVE?</span>
+      <span class="cluster">Homelab cluster</span>
+    </div>
+    <div class="right">
+      <span class="quorum" id="h-quorum">quorum ?</span>
+      <span id="h-time">--:--:--</span>
+    </div>
+  </div>
+
+  <div id="stats"></div>
+
+  <div id="midline"></div>
+
+  <div id="body">
+    <div id="guests-panel">
+      <div class="title">Guests on this host</div>
+      <div id="guest-grid"></div>
+      <div id="overflow-note"></div>
+    </div>
+    <div id="ups-panel" style="display:none">
+      <div class="title">UPS</div>
+      <div class="status-line" id="ups-status">--</div>
+      <div class="battery-shell"><div class="battery-fill" id="ups-battery-fill" style="width:0%"></div></div>
+      <div class="ups-row"><span class="k">Charge</span><span class="v" id="ups-charge">--</span></div>
+      <div class="ups-row"><span class="k">Runtime</span><span class="v" id="ups-runtime">--</span></div>
+      <div class="ups-row"><span class="k">Load</span><span class="v" id="ups-load">--</span></div>
+      <div class="ups-row"><span class="k">Input</span><span class="v" id="ups-input">--</span></div>
+    </div>
+  </div>
+
+  <div class="footer" id="h-footer"></div>
+</div>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

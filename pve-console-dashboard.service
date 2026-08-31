@@ -1,0 +1,16 @@
+[Unit]
+Description=Proxmox console dashboard (framebuffer status screen on tty1)
+After=pve-cluster.service pvedaemon.service
+Wants=pve-cluster.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/pve-console-dashboard/render.py
+Restart=always
+RestartSec=10
+# render.py writes the screenshot to /dev/fb0; it needs the framebuffer.
+SupplementaryGroups=video
+Nice=10
+
+[Install]
+WantedBy=multi-user.target
